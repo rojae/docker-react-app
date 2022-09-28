@@ -1,7 +1,9 @@
 version: '2.4'
 services:
   frontend:
-    image: rojae/docker-react-app
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
       - /app/node_modules
       - ./frontend:/app
