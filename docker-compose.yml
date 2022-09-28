@@ -10,7 +10,7 @@ services:
 
   nginx:
     restart: always
-    image: rojae/docker-nginx
+    image: nginx
     ports:
       -"80:80"
     mem_limit: 128m
