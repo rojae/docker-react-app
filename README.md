@@ -7,4 +7,4 @@
 ## With docker-compose
 - docker-compose -d up
 - docker-compose up --build 
-- Use Travis, ElasticBeanstalk
+- Use Travis-CI, AWS ElasticBeanstalk, AWS S3
