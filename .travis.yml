@@ -9,8 +9,8 @@ before_install:
   - echo "start creating docker image"
   - docker build -t rojae/docker-react-app -f Dockerfile ./
 
-script:
-  - docker run -it -p 80:80 -e CI=true rojae/docker-react-app
+#script:
+#  - docker run -it -p 80:80 -e CI=true rojae/docker-react-app
 
 deploy:
   provider: elasticbeanstalk
