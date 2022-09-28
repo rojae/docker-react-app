@@ -17,11 +17,3 @@ services:
     links:
       - frontend
   
-  tests:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    volumes:
-      - /app/node_modules
-      - ./frontend:/app
-    command: ["npm", "run", "test"]
