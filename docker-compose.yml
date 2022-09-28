@@ -12,7 +12,7 @@ services:
     restart: always
     image: nginx
     ports:
-      -"80:80"
+      - "80:80"
     mem_limit: 128m
     links:
       - frontend
