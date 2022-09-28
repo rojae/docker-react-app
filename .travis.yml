@@ -11,6 +11,7 @@ before_install:
 
 script:
   - docker run -e CI=true rojae/docker-react-app
+  - npm run test -- --coverage
 #   - docker run -e CI=true rojae/docker-react-app npm run test -- --coverage
 
 deploy:
