@@ -1,20 +1,27 @@
-version: '3'
+version: '2.4'
 services:
-  react:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8080:80"
+  frontend:
+    image: rojae/docker-react-app
     volumes:
-      - /usr/src/app/node_modules
-      - ./:/usr/src/app
+      - /app/node_modules
+      - ./frontend:/app
     stdin_open: true
+    mem_limit: 128m
+
+  nginx:
+    restart: always
+    image: rojae/docker-nginx
+    ports:
+      -"80:80"
+    mem_limit: 128m
+    links:
+      - frontend
+  
   tests:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - /usr/src/app/node_modules
-      - ./:/usr/src/app
+      - /app/node_modules
+      - ./frontend:/app
     command: ["npm", "run", "test"]
